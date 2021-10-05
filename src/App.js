@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Main from "./components/Main";
+import CssBaseline from "@mui/material/CssBaseline"
+import { Container } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme( {
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#5893df',
+    },
+    secondary: {
+      main: '#2ec5d3',
+    },
+    background: {
+    //   default: '#192231',
+    //   paper: '#24344d',
+    //   paper: 'white',
+        default: '#2b2d42',
+        paper: 'white'
+    },
+  },
+  typography: {
+    fontFamily: [
+    //   '-apple-system',
+    //   'BlinkMacSystemFont',
+    //   '"Segoe UI"',
+    //   'Roboto',
+    //   '"Helvetica Neue"',
+    //   'Arial',
+    //   'sans-serif',
+    //   '"Apple Color Emoji"',
+    //   '"Segoe UI Emoji"',
+    //   '"Segoe UI Symbol"',
+      'Lexend Deca',
+      'sans-serif'
+    ].join(','),
+  },
+
+})
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme} >
+            <CssBaseline />
+            
+            <Main />
+            
+        </ThemeProvider>
+    );
 }
 
 export default App;
